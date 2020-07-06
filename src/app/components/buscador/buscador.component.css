@@ -1,0 +1,37 @@
+.buscador {
+    height: 60vh;
+    /*     background-color: aqua; */
+}
+
+label {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #7035ca;
+}
+
+input {
+    height: 3em;
+}
+
+select {
+    height: 3em;
+}
+
+button {
+    height: 2.2em;
+    font-size: 1.4em;
+    background-color: #7952b3;
+    border: #7952b3 solid 2px;
+    color: white;
+}
+
+button:hover, button:focus {
+    border: #7952b3 solid 2px;
+    background-color: #7035ca;
+    color: white;
+}
+
+button:disabled{
+    border: #bfa7e4 solid 2px;
+    background-color: #d2b5fd;
+}

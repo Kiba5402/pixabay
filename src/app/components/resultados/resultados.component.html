@@ -1,0 +1,10 @@
+<div class="container-fluid resultados">
+    <div class="row justify-content-md-center">
+        <div class="col10" *ngIf="flagerr else dataDiv">
+            Error al consultar en la API
+        </div>
+        <ng-template #dataDiv>
+            <pre>{{dataImg | json}}</pre>
+        </ng-template>
+    </div>
+</div>

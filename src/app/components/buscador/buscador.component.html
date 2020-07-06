@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <form [formGroup]="formGroup" class="row justify-content-md-center align-items-center buscador">
+        <div class="col-2">
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select class="form-control" id="category" formControlName="category">
+                    <option value="-1">Select Category</option>
+                    <option *ngFor="let cat of categorias" value="{{cat.val}}">
+                        {{cat.val}}
+                    </option>
+                </select>
+                <small style="color: white;">.</small>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="keywords">KeyWords</label>
+                <input #kw class="form-control" id="keywords" formControlName="keywords">
+                <small class="form-text text-muted" [ngStyle]="{
+                    'visibility': formGroup.invalid ? 'visible' : 'hidden'
+                }">50 Characters max</small>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="form-group">
+                <label for="keywords" style="color: white;">.</label>
+                <button #button (click)="buscarKeyWords(kw.value)" class="form-control btn" disabled>Search</button>
+                <small style="color: white;">.</small>
+            </div>
+        </div>
+    </form>
+</div>
