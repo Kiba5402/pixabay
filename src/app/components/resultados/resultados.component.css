@@ -1,3 +1,24 @@
-.resultados{
-/*     background-color: aqua; */
+.resultados {
+    /*     background-color: aqua; */
+}
+
+.likes {
+    height: 2em;
+    width: 8em;
+    font-size: 0.8em;
+    line-height: 17px;
+}
+
+img {
+    width: 300px;
+    vertical-align: middle;
+    margin: auto;
+    cursor: pointer;
+}
+
+.img {
+    max-height: 150px;
+    overflow: hidden;
+    margin-top: 5em;
+    display: flex;
 }

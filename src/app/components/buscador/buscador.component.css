@@ -1,6 +1,12 @@
 .buscador {
     height: 60vh;
+    margin-top: 5em;
     /*     background-color: aqua; */
+}
+
+.buscadorlt {
+    height: 20vh;
+    transition: height 1s;
 }
 
 label {
@@ -31,7 +37,7 @@ button:hover, button:focus {
     color: white;
 }
 
-button:disabled{
+button:disabled {
     border: #bfa7e4 solid 2px;
     background-color: #d2b5fd;
 }

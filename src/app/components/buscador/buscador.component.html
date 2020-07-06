@@ -1,5 +1,6 @@
 <div class="container-fluid">
-    <form [formGroup]="formGroup" class="row justify-content-md-center align-items-center buscador">
+    <form [formGroup]="formGroup" class="row justify-content-md-center align-items-center buscador"
+        [ngClass]="{'buscadorlt' : flagB, '' : !flagB}">
         <div class="col-2">
             <div class="form-group">
                 <label for="category">Category</label>

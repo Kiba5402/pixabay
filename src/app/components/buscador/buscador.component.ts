@@ -12,6 +12,7 @@ export class BuscadorComponent implements OnInit {
 
   public categorias: Array<{}>;
   public formGroup: FormGroup;
+  public flagB: boolean;
   @ViewChild("button", { static: true }) button: ElementRef;
 
   constructor(private pixabayS: PixabayService) {
@@ -28,6 +29,7 @@ export class BuscadorComponent implements OnInit {
       "keywords": new FormControl("", [Validators.maxLength(100)])
     });
     this.escuchaForm();
+    this.flagB = false;
   }
 
   escuchaForm() {
@@ -50,8 +52,10 @@ export class BuscadorComponent implements OnInit {
   buscar(info: { "cat": string, "key": string }) {
     if (info.cat !== undefined && info.key == undefined) {
       this.pixabayS.searchCatImg(info.cat);
+      this.flagB = true;
     } else if (info.key !== undefined && info.cat == undefined) {
       this.pixabayS.searchKeyWImg(info.key);
+      this.flagB = true;
     }
   }
 

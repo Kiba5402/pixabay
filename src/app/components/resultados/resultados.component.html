@@ -1,10 +1,43 @@
 <div class="container-fluid resultados">
-    <div class="row justify-content-md-center">
+    <div class="row">
+        <ng-template #dataDiv>
+            <ng-container *ngIf="dataImg.total !== 0 else noResults">
+                <div class="col-2 img img-tumbnail" *ngFor="let img of dataImg.hits">
+                    <img (click)="abrirmodal(img.webformatURL,img.tags,img.views,img.likes)" class="rounded"
+                        src="{{img.previewURL}}">
+                </div>
+            </ng-container>
+            <ng-template #noResults>No Results</ng-template>
+        </ng-template>
         <div class="col10" *ngIf="flagerr else dataDiv">
             Error al consultar en la API
         </div>
-        <ng-template #dataDiv>
-            <pre>{{dataImg | json}}</pre>
-        </ng-template>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <button #modalinfo data-toggle="modal" data-target="#exampleModal" style="display: none;"></button>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <img src="{{infoModal.url}}">
+                {{infoModal | json}}
+            </div>
+            <div class="modal-footer">
+                <div class="float-left">
+                    Tags:asd
+                </div>
+                <div class="badge badge-success likes">
+                    Views <span class="badge badge-light">{{infoModal.views}}</span>
+                </div>
+                <div class="badge badge-primary likes">
+                    Likes <span class="badge badge-light">{{infoModal.likes}}</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
