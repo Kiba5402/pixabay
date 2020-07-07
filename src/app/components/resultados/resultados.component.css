@@ -1,5 +1,13 @@
 .resultados {
-    /*     background-color: aqua; */
+    margin-bottom: 5em;
+}
+
+.modal-body img {
+    width: 25em;
+}
+
+.modal-body {
+    overflow: hidden;
 }
 
 .likes {
@@ -22,3 +30,30 @@ img {
     margin-top: 5em;
     display: flex;
 }
+
+.subTit {
+    max-width: 100%;
+    font-size: 1.2em;
+    color: #7952b39e;
+    font-weight: bold;
+    border-bottom: 2px solid;
+    opacity: 0;
+}
+
+.subTitD {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.nr {
+    color: #7952b39e;
+    font-size: 2em;
+    height: 15vh;
+    display: flex;
+}
+
+.nr span{
+    margin: auto;
+    vertical-align: middle;
+}
+

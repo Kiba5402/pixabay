@@ -23,10 +23,10 @@
             </div>
         </div>
         <div class="col-1">
-            <div class="form-group">
+            <div class="form-group" style="text-align: center;">
                 <label for="keywords" style="color: white;">.</label>
                 <button #button (click)="buscarKeyWords(kw.value)" class="form-control btn" disabled>Search</button>
-                <small style="color: white;">.</small>
+                <small [ngStyle]="{'visibility': pixabayS.transact ? 'visible' : 'hidden'}">Buscando...</small>
             </div>
         </div>
     </form>

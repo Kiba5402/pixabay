@@ -15,7 +15,7 @@ export class BuscadorComponent implements OnInit {
   public flagB: boolean;
   @ViewChild("button", { static: true }) button: ElementRef;
 
-  constructor(private pixabayS: PixabayService) {
+  constructor(public pixabayS: PixabayService) {
     this.categorias = [
       { "id": "1", "val": "Science" },
       { "id": "2", "val": "Education" },
@@ -50,6 +50,7 @@ export class BuscadorComponent implements OnInit {
   }
 
   buscar(info: { "cat": string, "key": string }) {
+    this.pixabayS.transact = true;
     if (info.cat !== undefined && info.key == undefined) {
       this.pixabayS.searchCatImg(info.cat);
       this.flagB = true;

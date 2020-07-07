@@ -1,13 +1,22 @@
 <div class="container-fluid resultados">
+    <div class="row justify-content-md-center">
+        <div class="col-11 subTit" [ngClass]="{'subTitD': flagInfo}">
+            Resultados
+        </div>
+    </div>
     <div class="row">
         <ng-template #dataDiv>
             <ng-container *ngIf="dataImg.total !== 0 else noResults">
                 <div class="col-2 img img-tumbnail" *ngFor="let img of dataImg.hits">
-                    <img (click)="abrirmodal(img.webformatURL,img.tags,img.views,img.likes)" class="rounded"
-                        src="{{img.previewURL}}">
+                    <img (click)="abrirmodal(img.webformatURL,img.tags,img.views,img.likes,img.webformatHeight)"
+                        class="rounded img-fluid" src="{{img.previewURL}}">
                 </div>
             </ng-container>
-            <ng-template #noResults>No Results</ng-template>
+            <ng-template #noResults>
+                <div class="col-12 nr">
+                    <span>No Results</span>
+                </div>
+            </ng-template>
         </ng-template>
         <div class="col10" *ngIf="flagerr else dataDiv">
             Error al consultar en la API
@@ -20,22 +29,28 @@
     <button #modalinfo data-toggle="modal" data-target="#exampleModal" style="display: none;"></button>
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-body" style="text-align: center;" [ngStyle]="{height: infoModal.height + 'px'}">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <img src="{{infoModal.url}}">
-                {{infoModal | json}}
+                <br>
+                <img src="{{infoModal.url}}" class="img-fluid rounded ">
             </div>
-            <div class="modal-footer">
-                <div class="float-left">
-                    Tags:asd
-                </div>
-                <div class="badge badge-success likes">
-                    Views <span class="badge badge-light">{{infoModal.views}}</span>
-                </div>
-                <div class="badge badge-primary likes">
-                    Likes <span class="badge badge-light">{{infoModal.likes}}</span>
+            <div class="modal-footer container">
+                <div class="row">
+                    <div class="col-6" style="text-align: left;">
+                        <span style="font-weight: bold;">Tags:</span> {{infoModal.tags}}
+                    </div>
+                    <div class="col-3">
+                        <span class="badge badge-success likes">
+                            Views <span class="badge badge-light">{{infoModal.views}}</span>
+                        </span>
+                    </div>
+                    <div class="col-3">
+                        <span class="badge badge-primary likes">
+                            Likes <span class="badge badge-light">{{infoModal.likes}}</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
