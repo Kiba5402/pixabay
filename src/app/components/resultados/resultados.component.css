@@ -62,5 +62,8 @@ img {
         height: 42vh;
         transition: height 1s;
     }
+    .footMo{
+        text-align: center !important;
+    }
 }
 

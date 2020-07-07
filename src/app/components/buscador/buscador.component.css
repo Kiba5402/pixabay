@@ -42,10 +42,6 @@ button:disabled {
     background-color: #d2b5fd;
 }
 
-.buscar{
-    width: 5em;
-}
-
 @media(max-width: 903px) {
     .buscador {
         height: 55vh;
@@ -68,5 +64,16 @@ button:disabled {
         height: 28vh;
         transition: height 1s;
     }
+}
 
+@media(max-width: 411px) {
+    .buscador {
+        height: 55vh;
+        margin-top: 2em;
+        /*     background-color: aqua; */
+    }
+    .buscadorlt {
+        height: 50vh;
+        transition: height 1s;
+    }
 }
