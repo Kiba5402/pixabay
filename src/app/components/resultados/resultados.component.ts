@@ -33,6 +33,7 @@ export class ResultadosComponent implements OnInit {
     //con esto sabemos cuando el buscador trajo informacion de la API
     pixabayS.subscribeResp().subscribe({
       next: data => {
+        this.dataImg = [];
         this.dataImg = data;
         this.flagInfo = true;
         this.pixabayS.transact = false;
