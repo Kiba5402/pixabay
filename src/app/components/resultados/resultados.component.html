@@ -3,7 +3,7 @@ resultantes de la busqueda -->
 <div class="container-fluid resultados">
     <div class="row justify-content-center">
         <div class="col-11 subTit" [ngClass]="{'subTitD': flagInfo}">
-            Resultados
+            Results
         </div>
     </div>
     <div class="row">
@@ -11,7 +11,7 @@ resultantes de la busqueda -->
             <ng-container *ngIf="dataImg.total !== 0 else noResults">
                 <div class="col-lg-2 col-md-4 col-sm-4 col-6 col img img-tumbnail" *ngFor="let img of dataImg.hits">
                     <img (click)="abrirmodal(img.webformatURL,img.tags,img.views,img.likes,img.webformatHeight)"
-                        class="rounded img-fluid" src="{{img.previewURL}}">
+                        class="rounded img-fluid" src="{{img.webformatURL}}">
                 </div>
             </ng-container>
             <ng-template #noResults>
