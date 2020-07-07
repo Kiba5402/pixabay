@@ -6,7 +6,6 @@ resultantes de la busqueda -->
             Results
         </div>
     </div>
-    {{dataImg | json}}
     <div class="row">
         <ng-template #dataDiv>
             <ng-container *ngIf="dataImg.total !== 0 else noResults">
