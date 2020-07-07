@@ -10,12 +10,14 @@ import { PixabayService } from '../../services/pixabay.service';
 })
 export class BuscadorComponent implements OnInit {
 
+  //definicion de variables
   public categorias: Array<{}>;
   public formGroup: FormGroup;
   public flagB: boolean;
   @ViewChild("button", { static: true }) button: ElementRef;
 
   constructor(public pixabayS: PixabayService) {
+    //seteamos las categorias del select para la busqueda
     this.categorias = [
       { "id": "1", "val": "Science" },
       { "id": "2", "val": "Education" },
@@ -24,6 +26,7 @@ export class BuscadorComponent implements OnInit {
       { "id": "5", "val": "Computer" },
       { "id": "6", "val": "Buildings" }
     ];
+    //creamos un grupo de formulario
     this.formGroup = new FormGroup({
       "category": new FormControl("-1"),
       "keywords": new FormControl("", [Validators.maxLength(100)])
@@ -32,6 +35,8 @@ export class BuscadorComponent implements OnInit {
     this.flagB = false;
   }
 
+  //funcion que se suscribe a cambios de valores
+  //en lso elementos dentro del formulario
   escuchaForm() {
     this.formGroup.statusChanges.subscribe((vals) => {
       if ((this.formGroup.get('keywords').value.trim() !== "") && this.formGroup.valid) {
@@ -49,6 +54,8 @@ export class BuscadorComponent implements OnInit {
     });
   }
 
+  //funcion principal de bsuqueda que invoca el servicio
+  //pixabay
   buscar(info: { "cat": string, "key": string }) {
     this.pixabayS.transact = true;
     if (info.cat !== undefined && info.key == undefined) {

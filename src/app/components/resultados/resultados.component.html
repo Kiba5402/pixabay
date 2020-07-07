@@ -1,5 +1,7 @@
+<!-- Seccion principal en la que se muestran las fotos
+resultantes de la busqueda -->
 <div class="container-fluid resultados">
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-center">
         <div class="col-11 subTit" [ngClass]="{'subTitD': flagInfo}">
             Resultados
         </div>
@@ -7,7 +9,7 @@
     <div class="row">
         <ng-template #dataDiv>
             <ng-container *ngIf="dataImg.total !== 0 else noResults">
-                <div class="col-2 img img-tumbnail" *ngFor="let img of dataImg.hits">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-6 col img img-tumbnail" *ngFor="let img of dataImg.hits">
                     <img (click)="abrirmodal(img.webformatURL,img.tags,img.views,img.likes,img.webformatHeight)"
                         class="rounded img-fluid" src="{{img.previewURL}}">
                 </div>
@@ -24,6 +26,7 @@
     </div>
 </div>
 
+<!-- Definicion del modal, donde daremos mas detalles de cada imagen -->
 <div class="modal fade" id="exampleModal" data-keyboard="false" tabindex="-1" role="dialog"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <button #modalinfo data-toggle="modal" data-target="#exampleModal" style="display: none;"></button>

@@ -5,3 +5,10 @@ header{
     color: white;
     height: 4.5em;  
 }
+
+@media(max-width: 425px) {
+    header h2{
+        font-size: 1.7em;
+        text-align: center; 
+    }
+}

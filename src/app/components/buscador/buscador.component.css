@@ -41,3 +41,32 @@ button:disabled {
     border: #bfa7e4 solid 2px;
     background-color: #d2b5fd;
 }
+
+.buscar{
+    width: 5em;
+}
+
+@media(max-width: 903px) {
+    .buscador {
+        height: 55vh;
+        margin-top: 2em;
+        /*     background-color: aqua; */
+    }
+    .buscadorlt {
+        height: 35vh;
+        transition: height 1s;
+    }
+}
+
+@media(max-width: 425px) {
+    .buscador {
+        height: 35vh;
+        margin-top: 2em;
+        /*     background-color: aqua; */
+    }
+    .buscadorlt {
+        height: 28vh;
+        transition: height 1s;
+    }
+
+}

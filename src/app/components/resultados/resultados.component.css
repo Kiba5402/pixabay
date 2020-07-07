@@ -57,3 +57,10 @@ img {
     vertical-align: middle;
 }
 
+@media(max-width: 425px) {
+    .buscadorlt {
+        height: 42vh;
+        transition: height 1s;
+    }
+}
+

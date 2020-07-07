@@ -8,6 +8,7 @@ import { PixabayService } from '../../services/pixabay.service';
 })
 export class ResultadosComponent implements OnInit {
 
+  //declaracion de variables
   public dataImg: any;
   public flagInfo : boolean;
   public flagerr: boolean;
@@ -28,6 +29,8 @@ export class ResultadosComponent implements OnInit {
 
     this.resetInfoModal();
 
+    //nos suscribimos al observable que nos provee el servicio
+    //con esto sabemos cuando el buscador trajo informacion de la API
     pixabayS.subscribeResp().subscribe({
       next: data => {
         this.dataImg = data;
@@ -42,6 +45,8 @@ export class ResultadosComponent implements OnInit {
     });
   }
 
+  //funcion que resetea la informacion de detalles
+  //de las fotos mostrada en el modal
   resetInfoModal() {
     this.infoModal = {
       "url": "",
@@ -52,6 +57,8 @@ export class ResultadosComponent implements OnInit {
     };
   }
 
+  //funcion que nos ayuda a abrir un modal para mostrar
+  //informacion mas detallada de cada imagen
   abrirmodal(url, tags, views, likes, height) {
     this.resetInfoModal();
     this.infoModal.url = url;

@@ -1,7 +1,8 @@
+<!-- Seccion de formulario de busqueda -->
 <div class="container-fluid">
     <form [formGroup]="formGroup" class="row justify-content-md-center align-items-center buscador"
         [ngClass]="{'buscadorlt' : flagB, '' : !flagB}">
-        <div class="col-2">
+        <div class="col-lg-2 col-md-3 col-sm-3">
             <div class="form-group">
                 <label for="category">Category</label>
                 <select class="form-control" id="category" formControlName="category">
@@ -13,7 +14,7 @@
                 <small style="color: white;">.</small>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-md-5 col-sm-5">
             <div class="form-group">
                 <label for="keywords">KeyWords</label>
                 <input #kw class="form-control" id="keywords" formControlName="keywords">
@@ -22,10 +23,10 @@
                 }">50 Characters max</small>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-lg-1 col-md-2 col-sm-2">
             <div class="form-group" style="text-align: center;">
                 <label for="keywords" style="color: white;">.</label>
-                <button #button (click)="buscarKeyWords(kw.value)" class="form-control btn" disabled>Search</button>
+                <button #button (click)="buscarKeyWords(kw.value)" class="form-control btn buscar" disabled>Search</button>
                 <small [ngStyle]="{'visibility': pixabayS.transact ? 'visible' : 'hidden'}">Buscando...</small>
             </div>
         </div>
